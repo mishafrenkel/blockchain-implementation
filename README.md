@@ -1,1 +1,3 @@
-Blockchain JavaScript
+# Blockchain Implementation in JavaScript
+
+### Decentralized blockchain network
