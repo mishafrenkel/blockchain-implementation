@@ -2,6 +2,8 @@ const Blockchain = require('./blockchain');
 
 const bitcoin = new Blockchain();
 
+console.log(bitcoin);
+
 // Testing creating Blocks
 // bitcoin.createNewBlock(2389, 'OIUOEREDHKHKD', '78s97d4x6dsf');
 // bitcoin.createNewBlock(2389, 'OIUOEREDHKHKD', '78s97d4x6dsf');
@@ -31,26 +33,26 @@ const bitcoin = new Blockchain();
 
 
 // Testing PROOF OF WORK Logic
-const previousBlockHash = '87765DA6CCF0668238C1D27C35692E11';
-const currentBlockData = [
-  {
-    amount: 50,
-    sender: 'ALEXHT845SJ5TKCJ2',
-    recipient: 'JENN5BG5DF6HT8NG9'
-  },
-  {
-    amount: 200,
-    sender: 'ALEXHT845SJ5TKCJ2',
-    recipient: 'JENN5BG5DF6HT8NG9'
-  },
-  {
-    amount: 300,
-    sender: 'ALEXHT845SJ5TKCJ2',
-    recipient: 'JENN5BG5DF6HT8NG9'
-  }
-];
-// const nonce = 100;
+// const previousBlockHash = '87765DA6CCF0668238C1D27C35692E11';
+// const currentBlockData = [
+//   {
+//     amount: 50,
+//     sender: 'ALEXHT845SJ5TKCJ2',
+//     recipient: 'JENN5BG5DF6HT8NG9'
+//   },
+//   {
+//     amount: 200,
+//     sender: 'ALEXHT845SJ5TKCJ2',
+//     recipient: 'JENN5BG5DF6HT8NG9'
+//   },
+  // {
+  //   amount: 300,
+  //   sender: 'ALEXHT845SJ5TKCJ2',
+  //   recipient: 'JENN5BG5DF6HT8NG9'
+  // }
+// ];
+// // const nonce = 100;
 
-// console.log(bitcoin.hashBlock(previousBlockHash, currentBlockData, nonce));
-// console.log(bitcoin.proofOfWork(previousBlockHash, currentBlockData));
-console.log(bitcoin.hashBlock(previousBlockHash, currentBlockData, 7049));
+// // console.log(bitcoin.hashBlock(previousBlockHash, currentBlockData, nonce));
+// // console.log(bitcoin.proofOfWork(previousBlockHash, currentBlockData));
+// console.log(bitcoin.hashBlock(previousBlockHash, currentBlockData, 7049));

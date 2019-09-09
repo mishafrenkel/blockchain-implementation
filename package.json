@@ -2,14 +2,17 @@
   "name": "blockchain",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dev/networkNode.js",
   "scripts": {
-    "test": "node dev/test.ks"
+    "start": "nodemon --watch dev -e js dev/api.js",
+    "test": "node dev/test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "sha256": "^0.2.0"
   }
 }
