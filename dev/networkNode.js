@@ -31,7 +31,7 @@ app.get('/mine', (req, res) => {
   const newBlock = bitcoin.createNewBlock(nonce, previousBlockHash, blockHash);
 
   const nodeAddress = uuid().split('-').join('');
-  bitcoin.createNewTeransaction(12.5, "00", nodeAddress);
+  bitcoin.createNewTransaction(12.5, "00", nodeAddress);
 
   res.json({
     note: "New block mined succesfully",
