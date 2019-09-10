@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const Blockchain = require('./blockchain');
 const bitcoin = new Blockchain();
 const uuid = require('uuid/v1');
+const rp = require('request-promise');
 
 const port = process.argv[2];
 
@@ -44,6 +45,24 @@ app.get('/mine', (req, res) => {
 
 app.post('/register-and-broadcast-node', (req, res) => {
   const newNodeUrl = req.body.newNodeUrl;
+  if (bitcoin.networkNodes.indexOf(newNodeUrl) == -1) {
+    butcoin.networkNodes.push(newNodeUrl);
+  }
+  const regNodesPromises = [];
+  bitcoint.networkNodes.forEach(networkNodeUrl => {
+    const requestOptions = {
+      uri: networkNodeUrl + '/register-node',
+      method: 'POST',
+      body: { newNodeUrl: newNodeUrl },
+      json: true
+    };
+    regNodesPromises.push(rp(requestOptions));
+  })
+
+  Promise.all(regNodesPromises)
+    .then(data => {
+      
+    });
 });
 
 app.post('/register-node', (req, res) => {
@@ -51,7 +70,7 @@ app.post('/register-node', (req, res) => {
 });
 
 app.post('register-nodes-bulk', (req, res) => {
-  
+
 });
 
 app.listen(port, () => console.log(`listening on port ${port}`));
